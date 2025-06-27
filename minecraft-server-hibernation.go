@@ -37,6 +37,8 @@ func main() {
 		progmgr.AutoTerminate()
 	}
 
+	fmt.Printf("Using client timeout value of %v\n", time.Duration(config.ConnectTimeoutSeconds)*time.Second)
+
 	// launch msh manager
 	go progmgr.MshMgr()
 	// wait for the initial update check
@@ -55,8 +57,6 @@ func main() {
 	go input.GetInput()
 
 	// ---------------- connections ---------------- //
-
-	fmt.Printf("Using client timeout value of %v", time.Duration(config.ConnectTimeoutSeconds)*time.Second)
 
 	// launch query handler
 	if config.ConfigRuntime.Msh.EnableQuery {
