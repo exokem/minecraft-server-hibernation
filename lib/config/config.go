@@ -37,7 +37,7 @@ var (
 	ServPort      int                  // ServPort		is the port for msh to connect to minecraft server
 	ServPortQuery int                  // ServPortQuery	is the port for msh to perform stats query requests at minecraft server
 
-	ConnectTimeoutSeconds int = 10 // ConnectTimeoutSeconds is the duration, in seconds, after which pending connections to the server will be timed out
+	ConnectTimeoutSeconds int // ConnectTimeoutSeconds is the duration, in seconds, after which pending connections to the server will be timed out
 )
 
 type Configuration struct {
