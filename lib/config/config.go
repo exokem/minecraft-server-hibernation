@@ -200,7 +200,7 @@ func (c *Configuration) loadRuntime(confdef *Configuration) *errco.MshLog {
 	flag.IntVar(&ServPort, "servport", ServPort, "Specify the minecraft server port.")
 	flag.IntVar(&ServPortQuery, "servportquery", ServPortQuery, "Specify minecraft server port for queries.")
 	flag.BoolVar(&c.Msh.EnableQuery, "enablequery", c.Msh.EnableQuery, "Enables queries handling.")
-	flag.IntVar(&c.Msh.ConnectTimeoutSeconds, "connecttimeoutseconds", c.Msh.ConnectTimeoutSeconds, "Specify time to wait before timing out pending server connections.")
+	flag.IntVar(&c.Msh.ConnectTimeoutSeconds, "logintimeout", c.Msh.ConnectTimeoutSeconds, "Specify time to wait before timing out pending server connections.")
 	flag.Int64Var(&c.Msh.TimeBeforeStoppingEmptyServer, "timeout", c.Msh.TimeBeforeStoppingEmptyServer, "Specify time to wait before stopping minecraft server.")
 	flag.BoolVar(&c.Msh.SuspendAllow, "suspendallow", c.Msh.SuspendAllow, "Enables minecraft server process suspension.")
 	flag.IntVar(&c.Msh.SuspendRefresh, "suspendrefresh", c.Msh.SuspendRefresh, "Specify how often the suspended minecraft server process must be refreshed.")
