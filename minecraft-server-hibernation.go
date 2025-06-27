@@ -55,6 +55,8 @@ func main() {
 
 	// ---------------- connections ---------------- //
 
+	fmt.Printf("Using client timeout value of %v", config.ConnectTimeoutSeconds)
+
 	// launch query handler
 	if config.ConfigRuntime.Msh.EnableQuery {
 		go conn.HandlerQuery()
