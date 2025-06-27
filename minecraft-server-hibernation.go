@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net"
+	"time"
 
 	"msh/lib/config"
 	"msh/lib/conn"
@@ -55,7 +56,7 @@ func main() {
 
 	// ---------------- connections ---------------- //
 
-	fmt.Printf("Using client timeout value of %v", config.ConnectTimeoutSeconds)
+	fmt.Printf("Using client timeout value of %v", time.Duration(config.ConnectTimeoutSeconds)*time.Second)
 
 	// launch query handler
 	if config.ConfigRuntime.Msh.EnableQuery {
