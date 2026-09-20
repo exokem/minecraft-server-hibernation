@@ -6,6 +6,7 @@ import (
 	"net"
 	"os"
 	"syscall"
+	"time"
 
 	"msh/lib/config"
 	"msh/lib/conn"
@@ -38,6 +39,8 @@ func main() {
 		logMsh.Log(true)
 		progmgr.AutoTerminate()
 	}
+
+	fmt.Printf("Using client timeout value of %v\n", time.Duration(config.ConnectTimeoutSeconds)*time.Second)
 
 	// launch msh manager
 	go progmgr.MshMgr()
